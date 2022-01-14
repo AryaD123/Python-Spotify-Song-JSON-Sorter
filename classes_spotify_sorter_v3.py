@@ -3,7 +3,7 @@ File: classes_spotify_sorter_v3.py
 Author: Arya Das
 Email: adasnxt@gmail.com
 Created: 12/19/2021
-Updated: 1/13/2023
+Updated: 1/13/2022
 Description:
 - similar to Version 2, looking to add data fields for play dates/times
 - looking to be able to pull from multiple json files (presumably for different spotify/last.fm users and do a comparison
