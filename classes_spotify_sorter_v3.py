@@ -32,9 +32,14 @@ def determine_file():
 
 user_input_file = input("Enter name of a file: ")
 song_count = 0
+terminate_program = False
 
-with open(user_input_file) as f:
-    json_data = json.load(f)
+try:
+    with open(user_input_file) as f:
+        json_data = json.load(f)
+except:
+    print("That file does not exist.")
+    terminate_program = True
 
 class Artist:
     def __init__(self, artist_name):
@@ -61,7 +66,10 @@ class Podcast:
         self.day = ""
         self.daily"""
 
-user_input_choice = input("Enter '1' to view music Stats, Enter '2' to view podcast stats: ")
+if terminate_program == False:
+    user_input_choice = input("Enter '1' to view music Stats, Enter '2' to view podcast stats: ")
+else:
+    user_input_choice = STOP_COMMANDS[0]
 
 def sort(param_class_and_key):
     # meant to sort ANY class object when called, regardless of music or podcast
