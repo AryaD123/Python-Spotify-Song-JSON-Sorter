@@ -3,7 +3,7 @@ File: classes_spotify_sorter_v3.py
 Author: Arya Das
 Email: adasnxt@gmail.com
 Created: 12/19/2021
-Updated: 1/13/2023
+Updated: 1/13/2022
 Description:
 - similar to Version 2, looking to add data fields for play dates/times
 - looking to be able to pull from multiple json files (presumably for different spotify/last.fm users and do a comparison
@@ -49,6 +49,7 @@ class Artist:
         self.artist_total_plays = 0
         self.time_played = 0
         self.timestamps = []
+        self.type = "Artist"
 
 class Podcast:
     def __init__(self, podcast_name):
@@ -57,14 +58,16 @@ class Podcast:
         self.episodes = {}
         self.total_plays = 0
         self.timestamps = []
+        self.type = "Podcast"
 
 # think about how to implement stats for day, month, year, unique listens, etc
-"""class Date:
+class Date:
     def __init__(self, year):
         self.year = year
         self.month = ""
         self.day = ""
-        self.daily"""
+        self.daily_plays = 0
+        self.time_played = 0
 
 if terminate_program == False:
     user_input_choice = input("Enter '1' to view music Stats, Enter '2' to view podcast stats: ")
