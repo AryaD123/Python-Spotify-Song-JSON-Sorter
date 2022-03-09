@@ -60,7 +60,7 @@ lastFMdict = {"username": last_FM_Username, "scrobbles": []}
 
 for iter in json_data:
     trackTimestamp = convertDateToEpoch(iter["ts"])
-    lastFMdict["scrobbles"].append({"track": iter["master_metadata_track_name"], "artist": iter["master_metadata_album_artist_name"], "album": iter["master_metadata_track_name"], "date": trackTimestamp})
+    lastFMdict["scrobbles"].append({"track": iter["master_metadata_track_name"], "artist": iter["master_metadata_album_artist_name"], "album": iter["master_metadata_album_album_name"], "date": trackTimestamp})
 
 userExportFile = input("Enter a json file name for exporting data: ")
 with open(userExportFile, "w") as exportFile:
