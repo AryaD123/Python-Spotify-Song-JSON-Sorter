@@ -24,10 +24,7 @@ except:
     print("That file does not exist.")
     terminate_program = True
 
-print("Hello world")
-
 userDateTime = "2017-05-23T02:11:26Z" # Example of spotify date/time format
-
 
 def convertDateToEpoch(exampleDateTime):
     splitDateTime = exampleDateTime.split("T")
@@ -66,3 +63,6 @@ for iter in json_data:
     trackTimestamp = convertDateToEpoch(iter["ts"])
     lastFMdict["scrobbles"].append({"track": iter["master_metadata_track_name"], "album": iter["master_metadata_track_name"], "artist": iter["master_metadata_album_artist_name"], "date": trackTimestamp})
 
+userExportFile = input("Enter a json file name for exporting data: ")
+with open(userExportFile, "w") as exportFile:
+    json.dump(lastFMdict, exportFile)
