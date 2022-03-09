@@ -56,7 +56,7 @@ def convertDateToEpoch(exampleDateTime):
 # convertDateToEpoch(userDateTime)
 
 last_FM_Username = input("Enter your last.fm username: ")
-lastFMdict = {"usernme": last_FM_Username, "scrobbles": []}
+lastFMdict = {"username": last_FM_Username, "scrobbles": []}
 
 for iter in json_data:
     trackTimestamp = convertDateToEpoch(iter["ts"])
