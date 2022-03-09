@@ -27,7 +27,7 @@ except:
 userDateTime = "2017-05-23T02:11:26Z" # Example of spotify date/time format
 
 def convertDateToEpoch(exampleDateTime):
-    splitDateTime = exampleDateTime.split("T")
+    splitDateTime = exampleDateTime.split("T") # Splits on the letter 'T', creates a list
     dateOnly = splitDateTime[0]
     timeOnly = splitDateTime[1].split("Z")
     splitDate = dateOnly.split("-")
@@ -53,7 +53,6 @@ def convertDateToEpoch(exampleDateTime):
     # print("unix_timestamp => ", (time.mktime(date_time.timetuple()))) # Can use for testing
     return int((time.mktime(date_time.timetuple())))
 
-
 # convertDateToEpoch(userDateTime)
 
 last_FM_Username = input("Enter your last.fm username: ")
@@ -66,3 +65,4 @@ for iter in json_data:
 userExportFile = input("Enter a json file name for exporting data: ")
 with open(userExportFile, "w") as exportFile:
     json.dump(lastFMdict, exportFile)
+
